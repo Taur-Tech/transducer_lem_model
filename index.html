@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Project Ryu: Loudspeaker Electrical Model</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="default.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/footer-distributed.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+        <h1>Project Ryu: Loudspeaker Electrical Model</h1>
+
+        <main>
+
+          <input id="tab1" type="radio" name="tabs" checked>
+          <label for="tab1">T/S Params</label>
+
+          <input id="tab2" type="radio" name="tabs">
+          <label for="tab2">Enclosure</label>
+
+          <input id="tab3" type="radio" name="tabs">
+          <label for="tab3">Model</label>
+
+          <input id="tab4" type="radio" name="tabs">
+          <label for="tab4">Impedance</label>
+
+          <section id="content1">
+              <form class="form-horizontal">
+              <fieldset>
+
+              <!-- Form Name -->
+              <legend>Loudspeaker T/S Parameters</legend>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Manufacturer</label>
+                <div class="col-md-4">
+                <input id="textinput" name="textinput" type="text" placeholder="Generic Brand" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="drv_model">Model</label>
+                <div class="col-md-4">
+                <input id="drv_model" name="drv_model" type="text" placeholder="Generic Model" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="drv_fs">Resonance Frequency, Fs [Hz]</label>
+                <div class="col-md-4">
+                <input id="drv_fs" name="drv_fs" type="text" placeholder="Fs [Hz]" class="form-control input-md" required="">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="drv_re">Voice Coil DC Resistance, Re [Ω]</label>
+                <div class="col-md-4">
+                <input id="drv_re" name="drv_re" type="text" placeholder="Re [Ω]" class="form-control input-md" required="">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="drv_le">Voice Coil Inductance, Le [mH]</label>
+                <div class="col-md-4">
+                <input id="drv_le" name="drv_le" type="text" placeholder="Le [mH]" class="form-control input-md" required="">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="drv_qts">Total Quality Factor, Qts</label>
+                <div class="col-md-4">
+                <input id="drv_qts" name="drv_qts" type="text" placeholder="Qts" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="drv_qes">Electrical Quality Factor, Qes</label>
+                <div class="col-md-4">
+                <input id="drv_qes" name="drv_qes" type="text" placeholder="Qes" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="drv_qms">Mechanical Quality Factor, Qms</label>
+                <div class="col-md-4">
+                <input id="drv_qms" name="drv_qms" type="text" placeholder="Qms" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="drv_bl">Motor Force Factor, Bl [Tm]</label>
+                <div class="col-md-4">
+                <input id="drv_bl" name="drv_bl" type="text" placeholder="Bl [Tm]" class="form-control input-md" required="">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="drv_vas">Equivalent Stiffness Air Volume, Vas [L]</label>
+                <div class="col-md-4">
+                <input id="drv_vas" name="drv_vas" type="text" placeholder="Vas [L]" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="drv_mms">Moving Mass, Mms [g]</label>
+                <div class="col-md-4">
+                <input id="drv_mms" name="drv_mms" type="text" placeholder="Mms [g]" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="drv_cms">Compliance, Cms [mm/N]</label>
+                <div class="col-md-4">
+                <input id="drv_cms" name="drv_cms" type="text" placeholder="Cms [mm/N]" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="drv_rms">Mechanical Resistance, Rms [kg/s]</label>
+                <div class="col-md-4">
+                <input id="drv_rms" name="drv_rms" type="text" placeholder="Rms [kg/s]" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="drv_sd">Piston Surface, SD [m^2]</label>
+                <div class="col-md-4">
+                <input id="drv_sd" name="drv_sd" type="text" placeholder="SD [m^2]" class="form-control input-md" required="">
+
+                </div>
+              </div>
+
+              </fieldset>
+              </form>
+          </section>
+
+          <section id="content2">
+              <form class="form-horizontal">
+              <fieldset>
+
+              <!-- Form Name -->
+              <legend>Enclosure Parameters</legend>
+
+              <!-- Select Basic -->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="enc_type">Enclosure Type</label>
+                <div class="col-md-4">
+                  <select id="encl_type" name="enc_type" class="form-control">
+                    <option value="1">None</option>
+                    <option value="2">Closed</option>
+                    <option value="3">Vented</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="encl_vol">Enclosure Volume, Vb [L]</label>
+                <div class="col-md-4">
+                <input id="encl_vol" name="encl_vol" type="text" placeholder="Vb [L]" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="encl_ql">Enclosure Loses, Ql </label>
+                <div class="col-md-4">
+                <input id="encl_ql" name="encl_ql" type="text" placeholder="Ql" class="form-control input-md">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="encl_vdia">Vent Diameter, Dvent [mm]</label>
+                <div class="col-md-4">
+                <input id="encl_vdia" name="encl_vdia" type="text" placeholder="Dvent [mm]" class="form-control input-md">
+                <span class="help-block">For rectangular ports, use diameter of a disc with the same surface</span>
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="encl_vlen">Vent Length, Lvent [mm]</label>
+                <div class="col-md-4">
+                <input id="encl_vlen" name="encl_vlen" type="text" placeholder="Lvent [mm]" class="form-control input-md">
+
+                </div>
+              </div>
+
+              </fieldset>
+              </form>
+
+
+          </section>
+
+          <section id="content3">
+              <!--RESULT FORM-->
+              <form class="form-horizontal" onsubmit="return false;">
+
+                <fieldset>
+
+                <!-- Form Name -->
+                <legend>Model Result</legend>
+                <img class="mdl_example" id="mdl_gif" src="img/model.gif" />
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <div class="result_row">
+                      <span>Re [Ω]: </span><span id="mdl_re">-</span>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <div class="result_row">
+                      <span>Le [mH]: </span><span id="mdl_le">-</span>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <div class="result_row">
+                      <span>Lces [mH]: </span><span id="mdl_lces">-</span>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <div class="result_row">
+                      <span>Cmes [uF]: </span><span id="mdl_cmes">-</span>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <div class="result_row">
+                      <span>Res [Ω]: </span><span id="mdl_res">-</span>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <div class="result_row">
+                      <span>Lceb [mH]: </span><span id="mdl_lceb">-</span>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <div class="result_row">
+                      <span>Reb [Ω]: </span><span id="mdl_reb">-</span>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <div class="result_row">
+                      <span>Cmep [uF]: </span><span id="mdl_cmep">-</span>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <div class="result_row">
+                      <span>Rep [Ω]: </span><span id="mdl_rep">-</span>
+                  </div>
+                </div>
+
+                <!-- Button -->
+                <!-- <div class="form-group">
+                  <label class="col-md-4 control-label" for="mdl_dat"></label>
+                  <div class="col-md-4">
+                    <button id="mdl_dat" name="mdl_dat" class="btn btn-primary">Download Data</button>
+                  </div>
+                </div> -->
+
+                </fieldset>
+              </form>
+          </section>
+
+          <section id="content4">
+              <form class="form-horizontal" onsubmit="return false;">
+                <fieldset>
+                <!-- Form Name -->
+                <legend>Impedance Curve</legend>
+                <!-- Impedance Graph -->
+                <canvas id="imp_graph"></canvas>
+                <!-- Button -->
+                <!-- <div class="form-group">
+                  <label class="col-md-4 control-label" for="mdl_zma"></label>
+                  <div class="col-md-4">
+                    <button id="mdl_zma" name="mdl_zma" class="btn btn-primary">Download Zma</button>
+                  </div>
+                </div> -->
+
+                </fieldset>
+              </form>
+          </section>
+
+        </main>
+
+        <footer class="footer-distributed">
+
+			<div class="footer-right">
+
+				<a href="https://www.facebook.com/ProjectRyu/"><i class="fa fa-facebook"></i></a>
+				<a href="https://github.com/Taur-Tech/Project-Ryu---Loudspeaker-Drivers"><i class="fa fa-github"></i></a>
+
+			</div>
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					<a href="http://projectryu.com/wp">Home</a>
+					·
+					<a href="http://projectryu.com/wp/disclaimer">Disclaimer</a>
+					·
+					<a href="mailto:contact@projectryu.com">Contact</a>
+				</p>
+
+				<p>PROJECT RYU &copy; 2017</p>
+			</div>
+
+		</footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/calc.js"></script>
+  </body>
+</html>
